@@ -1,0 +1,24 @@
+package fundamentosdeprogramacion;
+import java.util.Scanner;
+public class FactorialdeunNumero {
+
+	public static void main (String[] args) {
+		
+		//Se declaran variables enteras
+		 int res=1, i, numero;
+		 
+		 //Se crea un Scanner (Leer)
+		 Scanner Leer = new Scanner (System.in);
+		 
+		 //Se lee el número que se va a utilizar para calcular el factorial
+		 System.out.print("Digite el número ENTERO al cual desea calcularle el factorial: ");		 
+		 numero = Leer.nextInt();
+		 
+		 /*El for contiene un acumulador que realiza la multiplicación tantas 
+		  veces como numero digite el usuario*/
+		 for (i=1;  i<= numero; i++) {
+			 res = res * i;
+		 }
+		 System.out.print("\nEl factorial de " + numero + " es " + res);
+	}
+}
