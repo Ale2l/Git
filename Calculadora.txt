@@ -1,0 +1,52 @@
+package PruebasDeProyectos;
+
+import java.util.Scanner;
+
+public class Calculadora {
+
+	public static void main(String[] args) {
+		
+		Scanner leer = new Scanner(System.in);
+		
+		//Se declaran variables
+		int n1, n2, op, i, res=0;
+		
+		//Se leen los 2 números a operar y la operación que quiere realizar el usuario
+		System.out.print("\nDigite el primer número: ");
+		n1 = leer.nextInt();
+		
+		System.out.print("\n\nDigite el segundo número: ");
+		n2 = leer.nextInt();
+		
+		System.out.print("\n\nOPCIONES: \n\tDigite 1 si quiere sumar. \n\tDigite 2 si quiere restar. \n\tDigite 3 si quiere multiplicar. \n\tDigite 4 si quiere dividir ");
+		op = leer.nextInt();
+		
+		//A continuación, se realiza un condicional anidado para raelizar la operación que el ususario desea
+		if (op >= 5 || op<=0) {
+			System.out.print("¡¡¡¡Error !!!! \nDigite un número entre 1 y 5");
+		}else {
+			if (op == 1) {
+				res = n1+n2;
+			}else {
+				if (op == 2) {
+					res = n1-n2;
+				}else {
+					if (op ==3) {
+						res = n1 * n2;
+					}else {
+						if (op == 4) {
+							if (n2 == 0) {
+								System.out.print("¡¡¡¡ERROR!!!!");
+								}else {
+									res = n1/n2;
+								}
+							}
+					}
+				}
+			}
+		}
+		System.out.print("El resultado de la operación es: " + res);
+		
+	}
+
+}
