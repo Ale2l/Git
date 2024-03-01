@@ -1,0 +1,48 @@
+package Parcial;
+
+public class CastilloDelRey {
+
+	public static void main(String[] args) {
+		
+		//Se declaran variables
+		int infanteria = 0, Caballeria = 0, CaballeriaP = 0, totalFuerzasA = 0, totalFuerzasB= 0, TotalF = 0;
+		int totalHA = 1500, totalHB = 1300;
+		
+		//Se realizan operaciones para encontra las bajas totales en cada fila
+		infanteria = 30+60+90;
+		Caballeria = 10 + 60 + 30;
+		CaballeriaP = 2+3;
+		
+		//Se halla  el total de bajas en la FACCIÓN A
+		totalFuerzasA = totalHA - infanteria - Caballeria - CaballeriaP;
+		
+		System.out.print("     FACCION A (Fuerzas de " + totalHA + " hombres)");
+		System.out.print("\n\n- Bajas en la fila de infantería: " + infanteria);
+		System.out.print("\n- Bajas en la fila de caballería: " + Caballeria);
+		System.out.print("\n- Bajas en la fila de caballería pesada: " + CaballeriaP);
+		System.out.print("\n- El total de fuerzas en combate es: " + totalFuerzasA);
+		
+		//Se reinician las variables
+		infanteria = 0;
+		Caballeria = 0;
+		CaballeriaP = 0;
+		
+		//Se realizan operaciones para encontra las bajas totales en cada fila
+		infanteria = 50+90+10;
+		Caballeria = 200+180+20;
+		CaballeriaP = 10 + 5 +75;
+		
+		//Se halla  el total de bajas en la FACCIÓN B
+		totalFuerzasB = totalHB - infanteria - Caballeria - CaballeriaP;
+		System.out.print("\n\n\n     FACCION B (Fuerzas de " + totalHB + " hombres)");
+		System.out.print("\n\n- Bajas en la fila de infantería: " + infanteria);
+		System.out.print("\n- Bajas en la fila de caballería: " + Caballeria);
+		System.out.print("\n- Bajas en la fila de caballería pesada: " + CaballeriaP);
+		System.out.print("\n- El total de fuerzas en combate es: " + totalFuerzasB);
+		
+		//Se halla el total de bajas entre la FACCIÓN A y la FACCIÓN B
+		TotalF = totalFuerzasA+ totalFuerzasB;
+		
+		System.out.print("\n\n\nLas bajas totales entre la FACCIÓN A y la FACCION B es: "  + TotalF);
+	}
+}
