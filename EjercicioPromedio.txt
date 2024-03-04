@@ -1,0 +1,27 @@
+package EjercicioEnCalse;
+import java.util.Scanner;
+public class PromedioDenNumeros {
+
+	public static void main(String[] args) {
+		
+		//Se declaran variables
+		double numeros, acumulador = 0, res = 0;
+		int i, cantidad;
+		
+		Scanner leer = new Scanner (System.in); //Se crea el Scanner
+		
+		System.out.print("Digite la cantidad de números a promediar: ");
+		cantidad = leer.nextInt();
+		
+		//Se hace un ciclo for para que el usuario digite los números para hallar el primedio
+		for (i=1; i<= cantidad; i++) {
+			System.out.print("\n- Digite el " + i + "º número a promediar: ");
+			numeros = leer.nextDouble();
+			acumulador = acumulador + numeros; //Un acumulador para guardar la suma de todos los números digitados
+		}
+		//Se realiza la ultima ooperación para hallar el promedio
+		res = acumulador/cantidad;
+		System.out.print("\nEl promedio es " + res);
+	}
+
+}
