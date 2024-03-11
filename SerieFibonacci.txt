@@ -1,0 +1,44 @@
+package Funciones;
+
+import java.util.Scanner;
+
+public class SerieFibonacci {
+
+	public static int SerieFibonacci(int a, int b, int c, int n) {
+
+		for (int i = 1; i <= n - 2; i++) {
+			c = a + b;
+			a = b;
+			b = c;
+			System.out.print(" - " + c);
+		}
+		return c;
+	}
+
+	public static void main(String[] args) {
+
+		int a = 0, b = 1, c = 0;
+
+		Scanner leer = new Scanner(System.in);
+		System.out.print("Digite cuántos términos desea generar: ");
+		int n = leer.nextInt();
+		if (n < 1) {
+			System.out.print("El número debe ser positivo...");
+		} else {
+			if (n == 1) {
+				System.out.print("\nLa serie Fibonacci generada es:\n\n");
+				System.out.print(a);
+			} else {
+				if (n == 2) {
+					System.out.print("\nLa serie Fibonacci generada es:\n\n");
+					System.out.print(a + " - " + b);
+				} else {
+					System.out.print("\nLa serie Fibonacci generada es:\n\n");
+					System.out.print(a + " - " + b);
+
+					int res = SerieFibonacci(0, 1, 0, n);
+				}
+			}
+		}
+	}
+}
