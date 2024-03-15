@@ -1,0 +1,219 @@
+package Funciones;
+
+import java.util.Scanner;
+
+public class EjercicioAnobiciesto {
+
+	public static void main(String[] args) {
+
+		Scanner leer = new Scanner(System.in);
+
+		System.out.print("Digite el año para saber si el año es biciesto: ");
+		int ano = leer.nextInt();
+		int Fano = anoBiciesto(ano);
+
+		if (Fano != 0) {
+			System.out.print("\nEl año " + ano + " no es biciesto ");
+			System.out.print("\n\nPARA EL AÑO " + ano + " DIGITE EL MES PARA SABER CUÁNTOS DÍAS TIENE ");
+			System.out.print("\n\nPARA SABER CUANTOS DÌAS TIENE UN MES, DIGITE:");
+			System.out.print(
+					"\n- Enero: 1\n- Febrero: 2\n- Marzo: 3\n- Abril: 4\n- Mayo: 5\n- Junio: 6\n- Julio: 7\n- Agosto: 8\n- Septiembre: 9\n- Octubre: 10\n- Noviembre: 11\n- Diciembre: 12");
+
+			int mes = leer.nextInt();
+
+			if (mes <= 0 || mes >= 13) {
+				System.out.print("\n¡¡¡¡¡¡ LEA BIEN Y DIGITE LA OPCIÓN DE ACUERDO AL MES!!!!!");
+			}
+
+			switch (mes) {
+			case 1:
+				if (mes == 1) {
+					int Dias = Diasmes(31);
+					System.out.print("Enero tiene " + Dias + " días");
+				}
+				break;
+
+			case 2:
+				if (mes == 2) {
+					int Dias = Diasmes(28);
+					System.out.print("Febrero tiene " + Dias + " días");
+				}
+				break;
+
+			case 3:
+				if (mes == 3) {
+					int Dias = Diasmes(31);
+					System.out.print("Marzo tiene " + Dias + " días");
+				}
+				break;
+				
+			case 4:
+				if (mes == 4) {
+					int Dias = Diasmes(30);
+					System.out.print("Abril tiene " + Dias + " días");
+				}
+				break;
+			case 5:
+				if (mes == 5) {
+					int Dias = Diasmes(31);
+					System.out.print("Mayo tiene " + Dias + " días");
+				}
+				break;
+			case 6:
+				if (mes == 6) {
+					int Dias = Diasmes(30);
+					System.out.print("Junio tiene " + Dias + " días");
+				}
+				break;
+			case 7:
+				if (mes == 7) {
+					int Dias = Diasmes(31);
+					System.out.print("Julio tiene " + Dias + " días");
+				}
+				break;
+
+			case 8:
+				if (mes == 8) {
+					int Dias = Diasmes(31);
+					System.out.print("Agosto tiene " + Dias + " días");
+				}
+				break;
+
+			case 9:
+				if (mes == 9) {
+					int Dias = Diasmes(30);
+					System.out.print("Septiembre tiene " + Dias + " días");
+				}
+				break;
+				
+			case 10:
+				if (mes == 10) {
+					int Dias = Diasmes(31);
+					System.out.print("Octubre tiene " + Dias + " días");
+				}
+				break;
+			case 11:
+				if (mes == 11) {
+					int Dias = Diasmes(30);
+					System.out.print("Noviembre tiene " + Dias + " días");
+				}
+				break;
+			case 12:
+				if (mes == 12) {
+					int Dias = Diasmes(31);
+					System.out.print("diciembre tiene " + Dias + " días");
+				}
+				break;
+				
+
+			}
+
+		} else {
+
+			if (Fano == 0) {
+				System.out.print("El año " + ano + " es biciesto ");
+				System.out.print("\n\nPARA EL AÑO " + ano + " DIGITE EL MES PARA SABER CUÁNTOS DÍAS TIENE ");
+				System.out.print("\n\nPARA SABER CUANTOS DÌAS TIENE UN MES, DIGITE:");
+				System.out.print(
+						"\n- Enero: 1\n- Febrero: 2\n- Marzo: 3\n- Abril: 4\n- Mayo: 5\n- Junio: 6\n- Julio: 7\n- Agosto: 8\n- Septiembre: 9\n- Octubre: 10\n- Noviembre: 11\n- Diciembre: 12");
+
+				int mes = leer.nextInt();
+
+				if (mes <= 0 || mes >= 13) {
+					System.out.print("\n¡¡¡¡¡¡ LEA BIEN Y DIGITE LA OPCIÓN DE ACUERDO AL MES!!!!!");
+				}
+
+				switch (mes) {
+				case 1:
+					if (mes == 1) {
+						int Dias = Diasmes(31);
+						System.out.print("Enero tiene " + Dias + " días");
+					}
+					break;
+
+				case 2:
+					if (mes == 2) {
+						int Dias = Diasmes(29);
+						System.out.print("Febrero tiene " + Dias + " días");
+					}
+					break;
+
+				case 3:
+					if (mes == 3) {
+						int Dias = Diasmes(31);
+						System.out.print("Marzo tiene " + Dias + " días");
+					}
+					break;
+					
+				case 4:
+					if (mes == 4) {
+						int Dias = Diasmes(30);
+						System.out.print("Abril tiene " + Dias + " días");
+					}
+					break;
+				case 5:
+					if (mes == 5) {
+						int Dias = Diasmes(31);
+						System.out.print("Mayo tiene " + Dias + " días");
+					}
+					break;
+				case 6:
+					if (mes == 6) {
+						int Dias = Diasmes(30);
+						System.out.print("Junio tiene " + Dias + " días");
+					}
+					break;
+				case 7:
+					if (mes == 7) {
+						int Dias = Diasmes(31);
+						System.out.print("Julio tiene " + Dias + " días");
+					}
+					break;
+
+				case 8:
+					if (mes == 8) {
+						int Dias = Diasmes(31);
+						System.out.print("Agosto tiene " + Dias + " días");
+					}
+					break;
+
+				case 9:
+					if (mes == 9) {
+						int Dias = Diasmes(30);
+						System.out.print("Septiembre tiene " + Dias + " días");
+					}
+					break;
+					
+				case 10:
+					if (mes == 10) {
+						int Dias = Diasmes(31);
+						System.out.print("Octubre tiene " + Dias + " días");
+					}
+					break;
+				case 11:
+					if (mes == 11) {
+						int Dias = Diasmes(30);
+						System.out.print("Noviembre tiene " + Dias + " días");
+					}
+					break;
+				case 12:
+					if (mes == 12) {
+						int Dias = Diasmes(31);
+						System.out.print("Diciembre tiene " + Dias + " días");
+					}
+					break;
+				}
+			}
+		}
+	}
+
+	public static int anoBiciesto(int ano) {
+		int resA = ano % 4;
+		return resA;
+	}
+
+	public static int Diasmes(int mes) {
+		int resDm = mes;
+		return resDm;
+	}
+}
