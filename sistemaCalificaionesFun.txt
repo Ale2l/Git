@@ -1,0 +1,81 @@
+package Funciones;
+
+import java.util.Scanner;
+
+public class SistemaDeCalificacionesF {
+
+	public static void main(String[] args) {
+
+		Scanner leer = new Scanner(System.in);
+		System.out.print("Cuántas notas desea ingresar: ");
+		int n = leer.nextInt();
+		int calificaciones[] = new int[n];
+		Incalificaciones(calificaciones, leer);
+		calrestadisticas(calificaciones, leer);
+		distribucioncalificaciones(calificaciones, leer);
+
+	}
+
+	private static void Incalificaciones(int[] calificaciones, Scanner leer) {
+
+		for (int i = 0; i < calificaciones.length; i++) {
+			System.out.print("\nIngrese la calificación " + (i + 1) + ": ");
+			calificaciones[i] = leer.nextInt();
+
+			if (calificaciones[i] < 0 || calificaciones[i] > 100) {
+				System.out.print("¡¡¡¡ERROR!!!1 LAS CALIFICACIONES DEBEN ESTAR ENTRE 0 Y 100");
+				calificaciones[i] = leer.nextInt();
+
+			}
+		}
+	}
+
+	private static void calrestadisticas(int[] calificaciones, Scanner leer) {
+		double prom = 0;
+		int maxnota = 0, minnota = 100;
+		for (int i = 0; i < calificaciones.length; i++) {
+			if (calificaciones[i] > maxnota) {
+				maxnota = calificaciones[i];
+			}
+			if (calificaciones[i] < minnota) {
+				minnota = calificaciones[i];
+			}
+		}
+		System.out.println();
+		System.out.print("\nLa calificaión más alta es: " + maxnota);
+		System.out.print("\nLa calificaión más baja es: " + minnota);
+		for (int i = 0; i < calificaciones.length; i++) {
+			prom = prom + calificaciones[i];
+
+		}
+		prom = prom / calificaciones.length;
+		System.out.println("\n\n- EL PROMEDIO DE LAS NOTAS ES: " + prom);
+
+	}
+
+	private static void distribucioncalificaciones(int[] calificaciones, Scanner leer) {
+		int suma = 0, ex = 0, bueno = 0, regular = 0, insuf = 0;
+		for (int i = 0; i < calificaciones.length; i++) {
+
+			if (calificaciones[i] >= 90 && calificaciones[i] <= 100) {
+				ex++;
+			} else {
+				if (calificaciones[i] >= 70 && calificaciones[i] <= 89) {
+					bueno++;
+				} else {
+					if (calificaciones[i] >= 50 && calificaciones[i] <= 69) {
+						regular++;
+					} else {
+						insuf++;
+					}
+				}
+			}
+		}
+		System.out.println("\nEstudiantes con nota Excelente: " + ex);
+		System.out.println("Estudiantes con nota Bueno: " + bueno);
+		System.out.println("Estudiantes con nota Regular: " + regular);
+		System.out.print("Estudiantes con nota Insuficiente: " + insuf);
+
+	}
+
+}
