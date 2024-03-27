@@ -1,0 +1,40 @@
+package Funciones;
+
+import java.util.Scanner;
+
+public class EjercicioEnClaseIMC {
+	
+	public static String pedirDatos (Scanner leer) {
+		String nombre = leer.nextLine ();
+		return nombre;
+	}
+	
+	public static double calcularIMC (double peso, double altura) {
+		double CalculoIMC = peso / (altura*altura);
+		return CalculoIMC;
+	}
+	
+	public static void mostrarDatos (String nombre, double IMC) {
+	System.out.print("\nHola " + nombre + " su IMC es: " + IMC);
+	}
+
+	public static void main(String[] args) {
+		Scanner leer = new Scanner (System.in);
+		
+		System.out.print("Digite su peso en Kg: ");
+		double peso = leer.nextDouble();
+		
+		System.out.print("\nDigite su altura en metros: ");
+		double altura = leer.nextDouble();
+		
+		System.out.print("\nEscriba su nombre: ");
+		String nombre = leer.nextLine ();
+		String datos = pedirDatos(leer);
+		
+		double  IMC = calcularIMC(peso, altura);
+		
+		mostrarDatos(datos, IMC);
+
+	}
+
+}
