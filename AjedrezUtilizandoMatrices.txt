@@ -1,0 +1,26 @@
+package Matrices;
+
+public class Ajedrez {
+
+	public static void main(String[] args) {
+		
+		String [][] Ajedrez = {
+				
+				{"║ T  ","C  ", "A  ", "Q  ", "R  ", "A  ", "C  ", "T  ║" },
+				{"║ P  ","P  ", "P  ", "P  ", "P  ", "P  ", "P  ", "P  ║" },
+				{"║    ","   ", "   ", "   ", "   ", "   ", "   ", "   ║"},
+				{"║    ","   ", "   ", "   ", "   ", "   ", "   ", "   ║"},
+				{"║    ","   ", "   ", "   ", "   ", "   ", "   ", "   ║"},
+				{"║    ","   ", "   ", "   ", "   ", "   ", "   ", "   ║"},
+				{"║ P  ","P  ", "P  ", "P  ", "P  ", "P  ", "P  ", "P  ║" },
+				{"║ T  ","C  ", "A  ", "Q  ", "R  ", "A  ", "C  ", "T  ║" },
+		};
+		
+		for (int i = 0; i < Ajedrez.length; i++) {
+			for (int j = 0; j < Ajedrez.length; j++) {
+				System.out.print(Ajedrez[i][j]);
+			}
+			System.out.print("\n");
+		}
+	}
+}
