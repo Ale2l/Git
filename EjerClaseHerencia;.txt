@@ -1,0 +1,142 @@
+package EjerClaseHerencia;
+
+public class Electronico {
+
+	private String nombre;
+	private double precio;
+	private String marca;
+	
+	public Electronico(String nombre, double precio, String marca) {
+		
+		this.nombre = nombre;
+		this.precio = precio;
+		this.marca = marca;
+	}
+	
+	//metodos
+	public void AsignarNombre (String nom) { //para establecer el nombre
+		if (nom.length() == 0) { 
+			System.out.print("Error: cadena vacía");
+			return;
+		}
+		nombre = nom;
+	}
+	
+	public String ObtenerNombre (String nom) {//método para obtener nombre
+		return nombre;
+	}
+	
+	public void AsignarPrecio (double Vprecio) { //para establecer el precio
+		if (Vprecio <= 0) {
+			System.out.print("Error: precio no válido");
+			return;
+		}
+		precio = Vprecio;
+	}
+	
+	public double ObtenerPrecio (double Vprecio) {//método para obtener precio
+		return precio;
+	}
+	
+	public void AsignarMarca(String marc) { //para establecer la marca
+		if (marc.length() == 0) { 
+			System.out.print("Error: cadena vacía");
+			return;
+		}
+		marca = marc;
+	}
+	
+	public String ObtenerMarca (String marc) {//método para obtener marca
+		return marca;
+	}
+
+__________________________________________________________________________________________
+
+package EjerClaseHerencia;
+
+public class Telefono extends Electronico{
+	
+	private String modelo;
+	private double almacenamiento;
+	
+	public Telefono(String nombre, double precio, String marca, String modelo, double almacenamiento) {
+		
+		super (nombre, precio, marca);
+		this.modelo = modelo;
+		this.almacenamiento = almacenamiento;
+	}
+
+	public void hacerLlamada (int numero) {
+		System.out.print("haciendo llamada a " + numero);
+	}
+	
+}
+
+__________________________________________________________________________________________
+
+package EjerClaseHerencia;
+
+public class Tableta extends Electronico{
+
+	private String SistemaOperativo;
+	private double TamañoPantalla;
+	
+	public Tableta(String nombre, double precio, String marca, String SistemaOperativo, double TamañoPantalla) {
+		
+		super (nombre, precio, marca); //super hace referencia a "Electronico"
+		this.SistemaOperativo = SistemaOperativo;
+		this.TamañoPantalla = TamañoPantalla;
+	}
+
+	public void instalarApp (String app) {
+		System.out.print("Se intaló: " + app);
+	}
+}
+
+__________________________________________________________________________________________
+
+package EjerClaseHerencia;
+
+public class Portatil extends Electronico{
+
+	private String procesador;
+	private double memoriaRam;
+	
+	public Portatil (String nombre, double precio, String marca, String procesador, double memoriaRam) {
+		
+		super (nombre, precio, marca);
+		this.procesador = procesador;
+		this.memoriaRam = memoriaRam;
+	}
+
+	public void encender (int prendido) {
+		if (prendido == 1) {
+		System.out.print("El portatil está encendio");
+		}else {
+			System.out.print("El portatil está apagado");
+		}
+	}
+}
+
+__________________________________________________________________________________________
+
+package EjerClaseHerencia;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		Telefono Tel = new Telefono ("Samsung s34", 600, "Samsung", "s34", 355);
+		
+		Tableta Tabl = new Tableta ("Samsung", 5000, "Samsung T", "Android", 15);
+		
+		Portatil Pc = new Portatil ("Hp", 24638, "Hilui Pacar", "intel i3", 1500);
+		
+		System.out.print("\n");
+		Tel.hacerLlamada(3246592);
+		System.out.print("\n");
+		Tabl.instalarApp("Call of duty");
+		System.out.print("\n");
+		Pc.encender(1);
+	}
+}

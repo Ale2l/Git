@@ -1,0 +1,129 @@
+package AHORCADO;
+
+import java.util.Scanner;
+
+public class Ahorcado {
+	
+	public void iniciarjuego(char[] palabra, String Pal) {
+
+		for (int i = 0; i < Pal.length(); i++) {
+			palabra[i] = '_';
+		}
+		System.out.println("\n...::: ESTA ES LA PALABRA QUE DEBES ADIVINAR :::...\n");
+
+		for (int i = 0; i < Pal.length(); i++) {
+			System.out.print(palabra[i] + " ");
+		}
+	}
+	
+	public void validarletras(char[] palabra, Scanner leer, String Pal) {
+
+		int cl = 0, opo = 0;
+		boolean bandera = false;
+
+		do {
+
+			System.out.print("\n\nDigite la letra: ");
+			String letra = leer.nextLine();
+
+			for (int i = 0; i < Pal.length(); i++) {
+
+				if (letra.equals(Pal.substring(i, i + 1))) {
+					cl++;
+					System.out.println("\nLa letra " + letra + " está en la posición " + i);
+					bandera = true;
+					palabra[i] = Pal.substring(i, i + 1).charAt(0);
+				}
+			}
+
+			if (bandera == false) {
+				opo++;
+				if (opo == 1) {
+					System.out.println("  O");
+					System.out.println(" /|\\");
+					System.out.println(" / \\  ");
+					System.out.println();
+					System.out.println("=========''']");
+				} else {
+					if (opo == 2) {
+						System.out.println("  O");
+						System.out.println(" /|\\");
+						System.out.println(" / \\  |");
+						System.out.println("      |");
+						System.out.println("=========''']");
+					} else {
+						if (opo == 3) {
+							System.out.println("      |");
+							System.out.println("  O   |");
+							System.out.println(" /|\\  |");
+							System.out.println(" / \\  |");
+							System.out.println("      |");
+							System.out.println("=========''']");
+						} else {
+							if (opo == 4) {
+								System.out.println("  +---+");
+								System.out.println("      |");
+								System.out.println("  O   |");
+								System.out.println(" /|\\  |");
+								System.out.println(" / \\  |");
+								System.out.println("      |");
+								System.out.println("=========''']");
+							} else {
+								System.out.println("  +---+");
+								System.out.println("  |   |");
+								System.out.println("  O   |");
+								System.out.println(" /|\\  |");
+								System.out.println(" / \\  |");
+								System.out.println("      |");
+								System.out.println("=========''']");
+								System.out.println("Ahorcado");
+							}
+						}
+					}
+				}
+			}
+
+			System.out.println();
+			for (int i = 0; i < Pal.length(); i++) {
+				System.out.print(palabra[i] + " ");
+			}
+
+			bandera = false;
+
+		} while (cl != palabra.length && opo != 5);
+
+		if (opo == 5) {
+			System.out.println("\n\n!!! PERDISTE, LA PALABRA ERA: " + Pal + " !!!");
+			
+		} else {
+			System.out.println("\n!!! GANASTE !!!");
+		}
+	}
+}
+
+__________________________________________________________________________________________
+
+package AHORCADO;
+
+import java.util.Scanner;
+
+public class Main extends Ahorcado{
+
+	private static String Pal;
+	private String letra;
+	static Scanner leer = new Scanner(System.in);
+	
+	public static void main(String[] args) {
+		
+		System.out.println("!!! JUEGO DEL AHORCADO !!!\n");
+		System.out.print("Digite la palabra: ");
+		Pal = leer.nextLine();
+		char palabra[] = new char[Pal.length()];
+
+		Ahorcado A = new Ahorcado ();
+		
+		A.iniciarjuego(palabra, Pal);
+		A.validarletras(palabra, leer, Pal);
+	}
+
+}
