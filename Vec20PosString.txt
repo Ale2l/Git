@@ -1,0 +1,22 @@
+package Vectores;
+import java.lang.*;
+import java.util.Scanner;
+
+public class Posiciones20String {
+
+	public static void main(String[] args) {
+		
+		String letras [] = new String [20];
+		Scanner leer = new Scanner(System.in);
+		
+		for (int  i = 0; i<letras.length; i++) {
+			System.out.print("Digite la " + i + " º letra: ");
+			
+			letras [i] = leer.nextLine();
+		}
+		
+		for (int  i = 0; i<letras.length; i++) {
+			System.out.print(" " + letras [i]);
+		}
+	}
+}
