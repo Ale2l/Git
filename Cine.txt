@@ -1,0 +1,152 @@
+package Matrices;
+
+import java.util.Scanner;
+
+public class Cine {
+
+	int disponible, ocupado;
+	static int fila, columna, F, C;
+	static int TamanoCine = 8;
+	static int[][] Asientos = new int[TamanoCine][TamanoCine];
+
+	static boolean bandera = false;
+
+	public Cine() {
+		disponible = 0;
+		for (int i = 0; i < Asientos.length; i++) {
+			for (int j = 0; j < Asientos.length; j++) {
+				Asientos[i][j] = disponible;
+			}
+		}
+
+	}
+
+	// Se imprime el tablero (Cine)
+	public static void mostrar() {
+
+		System.out.print("\tBIENVENIDO A CINELANDIA");
+		System.out.println("\n╔════════════════════════════════════════╗");
+		for (int i = 0; i < Asientos.length; i++) {
+			System.out.print("║");
+			for (int j = 0; j < Asientos.length; j++) {
+				System.out.print("  ☺  ");
+			}
+			System.out.println("║");
+		}
+		System.out.print("╚════════════════════════════════════════╝");
+	}
+
+	public static int Disponibilidad(Scanner leer, int opcion) {
+		switch (opcion) {
+
+		case 1:
+
+			// RESERVAS
+			do { 
+				System.out.print("Digite el numero de fila: ");
+				fila = leer.nextInt();
+				F = fila - 1;
+
+				System.out.print("Digite el numero de asiento: ");
+				columna = leer.nextInt();
+				C = columna - 1;
+
+				if (F > TamanoCine || C > TamanoCine) {
+					System.out.print("La silla no existe. ");
+				}
+
+			} while (F > TamanoCine || C > TamanoCine); //Se repite mientras el numero digitado no esté dentro del tablero
+
+			for (int i = 0; i < TamanoCine; i++) {
+				for (int j = 0; j < TamanoCine; j++) {
+					Asientos[F][C] = 1;
+
+					if (Asientos[i][j] == 0) {
+						System.out.print("  ☺  "); // imprime sillas vacias
+					} else {
+						if (Asientos[i][j] != 0) {
+							System.out.print("  x  "); // imprime sillas ocupadas
+						}
+					}
+				}
+				System.out.print("\n");
+			}
+			break;
+
+		case 2:
+			
+			System.out.println("\n\tCANCELACIÓN DE RESERVAS   ");
+			do {
+				System.out.print("Digite el numero de fila: ");
+				fila = leer.nextInt();
+				F = fila - 1;
+
+				System.out.print("Digite el numero de asiento: ");
+				columna = leer.nextInt();
+				C = columna - 1;
+
+				if (F > TamanoCine || C > TamanoCine) {
+					System.out.print("La silla no existe. ");
+				}
+
+			} while (F > TamanoCine || C > TamanoCine);
+
+			for (int i = 0; i < TamanoCine; i++) {
+				for (int j = 0; j < TamanoCine; j++) {
+					Asientos[F][C] = 0;
+
+					if (Asientos[i][j] == 0) {
+						System.out.print("  ☺  "); // imprime sillas vacias
+					} else {
+
+						System.out.print("  x  "); // imprime sillas ocupadas
+					}
+				}
+				System.out.print("\n");
+			}
+			break;
+
+		case 3:
+		}
+
+		return opcion;
+	}
+
+	public static void main(String[] args) {
+
+		int a = 0;
+		Scanner leer = new Scanner(System.in);
+		mostrar();
+		int opcion;
+		
+		// imprimir menú
+		do {
+			System.out.print("\n\nMENÚ GENERAL");
+			System.out.print("\n\n[1]Elegir asiento");
+			System.out.print("\n[2]Cancelar reserva");
+			System.out.print("\n[3]Salir");
+
+			opcion = leer.nextInt();
+
+			if (opcion == 1) {
+				// RESERVAS
+				int Nsillas;
+				do {
+					System.out.print("\nDigite cuántas sillas desea areservar: ");
+					Nsillas = leer.nextInt();
+
+					// Para validar que la silla se encuentre entre el tamaño de la matriz 8*8
+					if (Nsillas > Asientos.length) {
+						System.out.print(
+								"Disculpe, pero estaría reservando más de lo que le ofrecemos.\nDigite de nuevo.");
+					}
+				} while (Nsillas > Asientos.length);
+
+				for (int i = 1; i < Nsillas; i++) {
+					int D = Disponibilidad(leer, opcion);
+				}
+			}
+			Disponibilidad(leer, opcion);
+		} while (opcion > 0 && opcion < 4);
+	}
+}
